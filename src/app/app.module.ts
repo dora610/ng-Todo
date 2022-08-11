@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AddTodoComponent
   ],
   imports: [
     BrowserModule,

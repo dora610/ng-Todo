@@ -2,23 +2,23 @@
 
 <h5>Organise your todo list</h5>
 
-<!-- <input type="text" #newTodo (keyup.Enter)="addTodo(newTodo.value)" (blur)="addTodo(newTodo.value)"> -->
-<input
+
+<!-- <input
   [(ngModel)]="todo"
   type="text"
   #newTodo="ngModel"
   name="todo"
   (keyup.Enter)="addTodoWithKey(); todoReset()"
 />
-<button (click)="addTodo(newTodo.value); todoReset()">Add todo</button>
+<button (click)="addTodo(newTodo.value); todoReset()">Add todo</button> -->
+
+<app-add-todo (addItem)="addTodo($event)"></app-add-todo>
 
 <h2>Your TODO list:</h2>
-<ul>
-  <li *ngFor="let todoItem of todoList">
+  <div class="todo-list" *ngFor="let todoItem of todoList">
     <app-todo-item
       [todoItem]="todoItem"
       (deleteItem)="deleteTodo($event)"
       (modifyItem)="modifyTodo($event)"
     ></app-todo-item>
-  </li>
-</ul>
+  </div>

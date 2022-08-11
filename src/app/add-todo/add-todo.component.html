@@ -1,0 +1,11 @@
+<div class="">
+  <input
+    type="text"
+    [(ngModel)]="todo"
+    type="text"
+    #newTodo="ngModel"
+    name="todo"
+    (keyup.Enter)="addTodo(); todoReset()"
+  />
+  <button (click)="addTodo(); todoReset()">Add Todo</button>
+</div>

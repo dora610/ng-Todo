@@ -13,25 +13,8 @@ export class AppComponent {
   todo: string = '';
   id: number = Todos.length + 1;
 
-  addTodo(todoInput: string) {
-    if (!todoInput) return;
-    let newTodoEle: Todo = {
-      id: this.id++,
-      name: todoInput,
-      isCompleted: false,
-    };
-    this.todoList.unshift(newTodoEle);
-  }
-
-  // with formControl
-  addTodoWithKey() {
-    if (!this.todo) return;
-    let newTodoEle: Todo = {
-      id: this.id++,
-      name: this.todo,
-      isCompleted: false,
-    };
-    this.todoList.unshift(newTodoEle);
+  addTodo(newTodoObj: Todo) {
+    this.todoList.unshift(newTodoObj);
   }
 
   modifyTodo(modifedTodo: Todo) {

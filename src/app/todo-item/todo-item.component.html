@@ -1,9 +1,11 @@
 <div class="card-container">
   <h4>{{ todoItem.name }}</h4>
-  <button (click)="deleteTodoItem()">Delete</button>
-  <button (click)="updateTodoItem()">Update</button>
+  <div>
+    <button (click)="deleteTodoItem()">Delete</button>
+    <button (click)="updateTodoItem()">Update</button>
+  </div>
   <div *ngIf="toBeUpdated">
-    <input type="text" #newTodo (keyup.Enter)="modifyTodoItem(newTodo.value)" />
+    <input type="text" #newTodo (keyup.Enter)="modifyTodoItem(newTodo.value)" (blur)="modifyTodoItem(newTodo.value)"/>
     <button (click)="modifyTodoItem(newTodo.value)">Modify</button>
   </div>
 </div>
