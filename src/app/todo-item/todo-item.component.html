@@ -1,11 +1,18 @@
 <div class="card-container">
   <h4>{{ todoItem.name }}</h4>
-  <div>
+  <div *ngIf="!toBeUpdated; else elseBlock">
     <button (click)="deleteTodoItem()">Delete</button>
     <button (click)="updateTodoItem()">Update</button>
   </div>
-  <div *ngIf="toBeUpdated">
-    <input type="text" #newTodo (keyup.Enter)="modifyTodoItem(newTodo.value)" (blur)="modifyTodoItem(newTodo.value)"/>
-    <button (click)="modifyTodoItem(newTodo.value)">Modify</button>
-  </div>
+  <ng-template #elseBlock>
+    <div>
+      <input
+        type="text"
+        #newTodo
+        (keyup.Enter)="modifyTodoItem(newTodo.value)"
+        (blur)="modifyTodoItem(newTodo.value)"
+      />
+      <button (click)="modifyTodoItem(newTodo.value)">Modify</button>
+    </div>
+  </ng-template>
 </div>
