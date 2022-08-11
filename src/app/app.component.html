@@ -14,8 +14,11 @@
 
 <h2>Your TODO list:</h2>
 <ul>
-  <li class="card-container" *ngFor="let todoItem of todos; let i = index">
-    <h4>{{ todoItem }}</h4>
-    <button (click)="deleteTodo(i)">Delete</button>
+  <li *ngFor="let todoItem of todoList">
+    <app-todo-item
+      [todoItem]="todoItem"
+      (deleteItem)="deleteTodo($event)"
+      (modifyItem)="modifyTodo($event)"
+    ></app-todo-item>
   </li>
 </ul>
