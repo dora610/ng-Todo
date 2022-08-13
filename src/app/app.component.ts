@@ -27,7 +27,7 @@ export class AppComponent {
     this.todoList = this.todoList.filter((todo) => todo.id != deleteIndex);
   }
 
-  todoReset() {
+  todoReset = ()=> {
     this.todo = '';
   }
 }

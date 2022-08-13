@@ -1,4 +1,9 @@
 <div class="card-container">
+  <input
+    type="checkbox"
+    name="isCompleted"
+    [checked]="todoItem.isCompleted"
+  />
   <h4>{{ todoItem.name }}</h4>
   <div *ngIf="!toBeUpdated; else elseBlock">
     <button (click)="deleteTodoItem()">Delete</button>
