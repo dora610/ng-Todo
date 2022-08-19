@@ -1,22 +1,27 @@
 <div class="card-container" [ngClass]="todoItem.isCompleted ? 'checked' : ''">
-  <input
-    type="checkbox"
-    name="isCompleted"
-    [checked]="todoItem.isCompleted"
-    (change)="toggleComplete()"
-  />
-  <h4>{{ todoItem.name }}</h4>
-  <div *ngIf="!toBeUpdated; else elseBlock">
-    <button (click)="deleteTodoItem()">Delete</button>
-    <button (click)="updateTodoItem()">Update</button>
+  <div class="card-elements" *ngIf="!toBeUpdated; else elseBlock">
+    <div class="todo-name">
+      <input
+      type="checkbox"
+      name="isCompleted"
+      [checked]="todoItem.isCompleted"
+      (change)="toggleComplete()"
+    />
+    <p>{{ todoItem.name }}</p>
+    </div>
+    <div>
+      <button (click)="deleteTodoItem()">Delete</button>
+      <button (click)="updateTodoItem()">Update</button>
+    </div>
   </div>
   <ng-template #elseBlock>
-    <div>
+    <div class="card-elements-center">
       <input
         type="text"
         #newTodo
         (keyup.Enter)="modifyTodoItem(newTodo.value)"
         (blur)="modifyTodoItem(newTodo.value)"
+        [value]="todoItem.name"
       />
       <button (click)="modifyTodoItem(newTodo.value)">Modify</button>
     </div>
