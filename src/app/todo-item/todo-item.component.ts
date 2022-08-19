@@ -20,7 +20,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit(): void {}
 
   deleteTodoItem() {
-    this.deleteItem.emit(this.todoItem.id);
+    confirm(`Want to delete - ${this.todoItem.name}?`) && this.deleteItem.emit(this.todoItem.id);
   }
 
   updateTodoItem() {
@@ -32,5 +32,9 @@ export class TodoItemComponent implements OnInit {
     let newTodoObj: Todo= {...this.todoItem, name: newTodo}
     this.modifyItem.emit(newTodoObj);
     this.toBeUpdated=false
+  }
+
+  toggleComplete(){
+    this.todoItem.isCompleted = !this.todoItem.isCompleted
   }
 }

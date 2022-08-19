@@ -1,0 +1,12 @@
+input{
+    border: 1px solid #f43b8b;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.add-todo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}

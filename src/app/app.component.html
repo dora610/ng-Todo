@@ -1,24 +1,13 @@
 <h1>Welcome to {{ title }}</h1>
-
-<h5>Organise your todo list</h5>
-
-
-<!-- <input
-  [(ngModel)]="todo"
-  type="text"
-  #newTodo="ngModel"
-  name="todo"
-  (keyup.Enter)="addTodoWithKey(); todoReset()"
-/>
-<button (click)="addTodo(newTodo.value); todoReset()">Add todo</button> -->
+<h3>Organise your todo list</h3>
 
 <app-add-todo (addItem)="addTodo($event)"></app-add-todo>
 
-<h2>Your TODO list:</h2>
-  <div class="todo-list" *ngFor="let todoItem of todoList">
-    <app-todo-item
-      [todoItem]="todoItem"
-      (deleteItem)="deleteTodo($event)"
-      (modifyItem)="modifyTodo($event)"
-    ></app-todo-item>
-  </div>
+<br>
+<div class="todo-list" *ngFor="let todoItem of todoList">
+  <app-todo-item
+    [todoItem]="todoItem"
+    (deleteItem)="deleteTodo($event)"
+    (modifyItem)="modifyTodo($event)"
+  ></app-todo-item>
+</div>

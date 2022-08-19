@@ -1,8 +1,9 @@
-<div class="card-container">
+<div class="card-container" [ngClass]="todoItem.isCompleted ? 'checked' : ''">
   <input
     type="checkbox"
     name="isCompleted"
     [checked]="todoItem.isCompleted"
+    (change)="toggleComplete()"
   />
   <h4>{{ todoItem.name }}</h4>
   <div *ngIf="!toBeUpdated; else elseBlock">
