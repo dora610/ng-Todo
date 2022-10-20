@@ -2,3 +2,10 @@ h1, h3{
     text-align: center;
     color: #da0561;
 }
+
+.todo-list{
+    width: 80vw;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
